@@ -15,7 +15,8 @@ TARGET = harbour-animalApp
 CONFIG += sailfishapp
 
 SOURCES += src/harbour-animalApp.cpp \
-    animal.cpp
+    animal.cpp \
+    animallist.cpp
 
 DISTFILES += qml/harbour-animalApp.qml \
     qml/cover/CoverPage.qml \
@@ -41,4 +42,5 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/harbour-animalApp-de.ts
 
 HEADERS += \
-    animal.h
+    animal.h \
+    animallist.h
