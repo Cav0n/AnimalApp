@@ -2,6 +2,7 @@
 #include <QtQuick>
 #endif
 
+#include "../animal.h"
 #include <sailfishapp.h>
 
 int main(int argc, char *argv[])
@@ -16,5 +17,16 @@ int main(int argc, char *argv[])
     //
     // To display the view, call "show()" (will show fullscreen on device).
 
-    return SailfishApp::main(argc, argv);
+    Animal animal("Un putain de tigre");
+
+    auto app = SailfishApp::application(argc, argv);
+    auto view = SailfishApp::createView();
+
+    view->rootContext()->setContextProperty("animal", &animal);
+    view->setSource(SailfishApp::pathToMainQml());
+    view->show();
+
+    qInfo() << animal.name();
+
+    return app->exec();
 }

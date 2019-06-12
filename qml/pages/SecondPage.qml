@@ -9,21 +9,26 @@ Page {
 
     SilicaListView {
         id: listView
-        model: 20
+        model: animals
         anchors.fill: parent
         header: PageHeader {
-            title: qsTr("Nested Page")
+            title: qsTr("[TEST] liste d'animaux")
         }
-        delegate: BackgroundItem {
+
+        delegate: ListItem {
             id: delegate
+            height:  Theme.itemSizeExtraSmall
 
             Label {
                 x: Theme.horizontalPageMargin
-                text: qsTr("Item") + " " + index
+                font.bold: spell.favourite
+                text: animal.name
                 anchors.verticalCenter: parent.verticalCenter
                 color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
             }
-            onClicked: console.log("Clicked " + index)
+            onClicked: {
+                console.log("Clicked " + index)
+            }
         }
         VerticalScrollDecorator {}
     }

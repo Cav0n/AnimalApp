@@ -14,7 +14,8 @@ TARGET = harbour-animalApp
 
 CONFIG += sailfishapp
 
-SOURCES += src/harbour-animalApp.cpp
+SOURCES += src/harbour-animalApp.cpp \
+    animal.cpp
 
 DISTFILES += qml/harbour-animalApp.qml \
     qml/cover/CoverPage.qml \
@@ -38,3 +39,6 @@ CONFIG += sailfishapp_i18n
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/harbour-animalApp-de.ts
+
+HEADERS += \
+    animal.h

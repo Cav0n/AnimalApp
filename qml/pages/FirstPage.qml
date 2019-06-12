@@ -30,11 +30,11 @@ Page {
             width: page.width
             spacing: Theme.paddingLarge
             PageHeader {
-                title: qsTr("UI Template")
+                title: qsTr("Mes petits animaux")
             }
             Label {
                 x: Theme.horizontalPageMargin
-                text: qsTr("Hello Sailors")
+                text: animal.name
                 color: Theme.secondaryHighlightColor
                 font.pixelSize: Theme.fontSizeExtraLarge
             }

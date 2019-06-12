@@ -15,22 +15,14 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>UI Template</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hello Sailors</source>
+        <source>Mes petits animaux</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SecondPage</name>
     <message>
-        <source>Nested Page</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Item</source>
+        <source>[TEST] liste d&apos;animaux</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
