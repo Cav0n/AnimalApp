@@ -2,6 +2,7 @@
 #define ANIMALLIST_H
 
 #include <QObject>
+#include "animal.h"
 
 class AnimalList : public QObject
 {
@@ -13,9 +14,20 @@ public:
     void append(Animal* animal);
     QList<Animal *> animals() const;
 
+
 signals:
+    void preItemAppended();
+    void postItemAppended();
+
+    void preItemRemoved(int index);
+    void postItemRemoved();
+
+    void itemChanged(int row);
+
+    void animalsChanged(QList<Animal*> animals);
 
 public slots:
+    void setAnimals(QList<Animal*> animals);
 };
 
 #endif // ANIMALLIST_H
