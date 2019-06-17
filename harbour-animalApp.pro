@@ -16,7 +16,8 @@ CONFIG += sailfishapp
 
 SOURCES += src/harbour-animalApp.cpp \
     animal.cpp \
-    animallist.cpp
+    animallist.cpp \
+    animalmodel.cpp
 
 DISTFILES += qml/harbour-animalApp.qml \
     qml/cover/CoverPage.qml \
@@ -28,7 +29,9 @@ DISTFILES += qml/harbour-animalApp.qml \
     rpm/harbour-animalApp.yaml \
     translations/*.ts \
     harbour-animalApp.desktop \
-    qml/pages/AnimalList.qml
+    qml/pages/AnimalListPage.qml \
+    qml/pages/Animal.qml \
+    qml/pages/FullAnimalDescription.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
@@ -44,4 +47,5 @@ TRANSLATIONS += translations/harbour-animalApp-de.ts
 
 HEADERS += \
     animal.h \
-    animallist.h
+    animallist.h \
+    animalmodel.h
