@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import AnimalModel 1.0
+import '../delegates'
 
 Page {
     id: page
@@ -19,12 +20,6 @@ Page {
             list: animalList
         }
 
-        delegate: Item {
-            width: parent.width
-            height: Theme.itemSizeMedium
-            Label {
-                text: name
-            }
-        }
+        delegate: DelegateAnimal { }
     }
 }

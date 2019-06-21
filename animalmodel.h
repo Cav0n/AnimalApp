@@ -39,10 +39,12 @@ public:
     Q_INVOKABLE void newElement();
     Q_INVOKABLE void removeRow(int index);
 
+    virtual QHash<int, QByteArray> roleNames() const override;
     enum {
-        Name  = Qt::UserRole,
+        Name,
         Animal
     };
 };
+
 
 #endif // ANIMALMODEL_H

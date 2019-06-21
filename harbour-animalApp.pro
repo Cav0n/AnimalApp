@@ -31,7 +31,8 @@ DISTFILES += qml/harbour-animalApp.qml \
     harbour-animalApp.desktop \
     qml/pages/AnimalListPage.qml \
     qml/pages/Animal.qml \
-    qml/pages/FullAnimalDescription.qml
+    qml/pages/FullAnimalDescription.qml \
+    qml/delegates/DelegateAnimal.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 

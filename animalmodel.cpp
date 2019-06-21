@@ -111,3 +111,11 @@ Qt::ItemFlags AnimalModel::flags(const QModelIndex &index) const
     return Qt::ItemIsEditable; // FIXME: Implement me!
 }
 
+QHash<int, QByteArray> AnimalModel::roleNames() const
+{
+    QHash<int, QByteArray> roles;
+    roles[Name]      = "name";
+    roles[Animal]    = "animal";
+
+    return roles;
+}
