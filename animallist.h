@@ -5,17 +5,20 @@
 #include <QList>
 #include "animal.h"
 
+class Animal;
+
 class AnimalList : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QList<Animal*> animals READ animals WRITE setAnimals NOTIFY animalsChanged)
     QList<Animal*> m_animals;
 
 public:
     explicit AnimalList(QObject *parent = nullptr);
-    void append(Animal* animal);
-    QList<Animal *> animals() const;
+
     Animal *at(int place) const;
+    void append(Animal* animal);
+    void createAnimal(QString nom);
+    void removeAnimal(int position);
     int count() const;
 
 signals:
@@ -27,10 +30,7 @@ signals:
 
     void itemChanged(int row);
 
-    void animalsChanged(QList<Animal*> animals);
-
 public slots:
-    void setAnimals(QList<Animal*> animals);
 };
 
 #endif // ANIMALLIST_H

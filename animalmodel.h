@@ -15,10 +15,11 @@ class AnimalModel : public QAbstractListModel
 {
     Q_OBJECT
 
-public:
-    AnimalModel( AnimalList *AnimalList, QObject *parent = nullptr);
-
     Q_PROPERTY(AnimalList *list READ list WRITE setList )
+    AnimalList *m_AnimalList;
+
+public:
+    explicit AnimalModel(QObject *parent = nullptr);
 
     // Basic functionality:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
@@ -29,19 +30,19 @@ public:
     bool setData(const QModelIndex &index, const QVariant &value,
                  int role = Qt::EditRole) override;
 
+    Qt::ItemFlags flags(const QModelIndex& index) const override;
+
     AnimalList *list() const;
 
     void setList(AnimalList *AnimalList);
+
+    Q_INVOKABLE void newElement();
+    Q_INVOKABLE void removeRow(int index);
 
     enum {
         Name  = Qt::UserRole,
         Animal
     };
-
-protected:
-    AnimalList *m_AnimalList;
-
-
 };
 
 #endif // ANIMALMODEL_H

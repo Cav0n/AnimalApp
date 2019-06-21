@@ -17,6 +17,7 @@ public slots:
     void setName(QString name);
 signals:
     void nameChanged(QString name);
+    void animalChanged();
 };
 
 #endif // ANIMAL_H

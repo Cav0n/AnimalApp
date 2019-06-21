@@ -23,15 +23,7 @@
 <context>
     <name>AnimalListPage</name>
     <message>
-        <source>Name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reset user preferences (Including Favourites!)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Compare Animals Lists</source>
+        <source>Mes animaux chef !</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -6,11 +6,9 @@
 #include <QDebug>
 #include <QSettings>
 
-AnimalModel::AnimalModel(AnimalList *AnimalList, QObject *parent)
+AnimalModel::AnimalModel(QObject *parent)
     : QAbstractListModel(parent), m_AnimalList(nullptr)
 {
-    if ( AnimalList )
-        setList(AnimalList);
 }
 
 AnimalList *AnimalModel::list() const
@@ -47,6 +45,18 @@ void AnimalModel::setList(AnimalList *AnimalList)
     }
 
     endResetModel();
+}
+
+void AnimalModel::newElement()
+{
+    QString nom(tr("Unknown"));
+
+    m_AnimalList->createAnimal(nom);
+}
+
+void AnimalModel::removeRow(int index)
+{
+    m_AnimalList->removeAnimal(index);
 }
 
 int AnimalModel::rowCount(const QModelIndex &parent) const
@@ -92,3 +102,12 @@ bool AnimalModel::setData(const QModelIndex &index, const QVariant &value, int r
     }
     return false;
 }
+
+Qt::ItemFlags AnimalModel::flags(const QModelIndex &index) const
+{
+    if (!index.isValid())
+        return Qt::NoItemFlags;
+
+    return Qt::ItemIsEditable; // FIXME: Implement me!
+}
+

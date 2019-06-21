@@ -1,18 +1,21 @@
 #include "animallist.h"
+#include "animal.h"
 
 AnimalList::AnimalList(QObject *parent) : QObject(parent)
 {
-
-}
-
-QList<Animal *> AnimalList::animals() const
-{
-    return m_animals;
+    append(new Animal("Tigre"));
+    append(new Animal("Lion"));
 }
 
 void AnimalList::append(Animal *animal)
 {
+    emit preItemAppended();
+    int position = count();
+    connect(animal, &Animal::animalChanged, this, [=](){
+        emit AnimalList::itemChanged(position);
+    });
     m_animals.append(animal);
+    emit postItemAppended();
 }
 
 int AnimalList::count() const
@@ -25,11 +28,26 @@ Animal *AnimalList::at(int place) const
     return m_animals.at(place);
 }
 
-void AnimalList::setAnimals(QList<Animal *> animals)
+void AnimalList::createAnimal(QString nom)
 {
-    if (m_animals == animals)
-        return;
+    append(new Animal(nom));
+}
 
-    m_animals = animals;
-    emit animalsChanged(m_animals);
+void AnimalList::removeAnimal(int position)
+{
+    emit preItemRemoved(position);
+
+    // No longer care for the file change
+    disconnect ( m_animals[position], &Animal::animalChanged, this, 0);
+
+    m_animals.removeAt(position);
+
+    // Reconnect to good positions
+    for ( ; position < count() ; ++position ) {
+        disconnect ( m_animals[position], &Animal::animalChanged, this, 0);
+        connect( m_animals[position], &Animal::animalChanged, this, [=](){
+            emit AnimalList::itemChanged( position );
+        });
+    }
+    emit postItemRemoved();
 }

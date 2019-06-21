@@ -54,7 +54,7 @@ Page {
 
                 Component {
                     id: webview
-                    FullSpellDescription { }
+                    FullAnimalDescription { }
                 }
             }
 

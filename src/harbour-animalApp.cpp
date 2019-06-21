@@ -2,7 +2,9 @@
 #include <QtQuick>
 #endif
 
-#include "../animal.h"
+#include "animal.h"
+#include "animalmodel.h"
+#include "animallist.h"
 #include <sailfishapp.h>
 
 int main(int argc, char *argv[])
@@ -22,11 +24,17 @@ int main(int argc, char *argv[])
     auto app = SailfishApp::application(argc, argv);
     auto view = SailfishApp::createView();
 
-    view->rootContext()->setContextProperty("animal", &animal);
+    qmlRegisterType<AnimalModel>("AnimalModel", 1, 0, "AnimalModel");
+    qmlRegisterUncreatableType<AnimalList>("AnimalList", 1, 0, "AnimalList", QStringLiteral("ATTENTION : Ne définissez pas AnimalList dans le QML."));
+    qmlRegisterUncreatableType<Animal>("Animal", 1, 0, "Animal", QStringLiteral("ATTENTION : Ne définissez pas Animal dans le QML."));
+
+    AnimalList animalList;
+
+    qInfo() << "Bonjour";
+
+    view->rootContext()->setContextProperty("animalList", &animalList);
     view->setSource(SailfishApp::pathToMainQml());
     view->show();
-
-    qInfo() << animal.name();
 
     return app->exec();
 }
