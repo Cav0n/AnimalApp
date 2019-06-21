@@ -3,8 +3,8 @@
 
 AnimalList::AnimalList(QObject *parent) : QObject(parent)
 {
-    append(new Animal("Tigre"));
-    append(new Animal("Lion"));
+    append(new Animal("Tigre", "Un magnifique fauve qui peut attendre des vitesses de barges !"));
+    append(new Animal("Lion", "C'est le roi de la savane mec."));
 }
 
 void AnimalList::append(Animal *animal)
@@ -28,9 +28,9 @@ Animal *AnimalList::at(int place) const
     return m_animals.at(place);
 }
 
-void AnimalList::createAnimal(QString nom)
+void AnimalList::createAnimal(QString nom, QString description)
 {
-    append(new Animal(nom));
+    append(new Animal(nom, description));
 }
 
 void AnimalList::removeAnimal(int position)

@@ -50,8 +50,9 @@ void AnimalModel::setList(AnimalList *AnimalList)
 void AnimalModel::newElement()
 {
     QString nom(tr("Unknown"));
+    QString description(tr("Unknow"));
 
-    m_AnimalList->createAnimal(nom);
+    m_AnimalList->createAnimal(nom, description);
 }
 
 void AnimalModel::removeRow(int index)
@@ -95,6 +96,9 @@ bool AnimalModel::setData(const QModelIndex &index, const QVariant &value, int r
         case Name:
             Animal->setName(value.toString());
             emit dataChanged(index, index, QVector<int>() << role);
+        case Description:
+            Animal->setDescription(value.toString());
+            emit dataChanged(index, index, QVector<int>() << role);
         default:
             break;
         }
@@ -115,6 +119,7 @@ QHash<int, QByteArray> AnimalModel::roleNames() const
 {
     QHash<int, QByteArray> roles;
     roles[Name]      = "name";
+    roles[Description] = "description";
     roles[Animal]    = "animal";
 
     return roles;

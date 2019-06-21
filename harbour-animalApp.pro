@@ -17,6 +17,10 @@ CONFIG += sailfishapp
 SOURCES += src/harbour-animalApp.cpp \
     animal.cpp \
     animallist.cpp \
+    animalmodel.cpp \
+    src/harbour-animalApp.cpp \
+    animal.cpp \
+    animallist.cpp \
     animalmodel.cpp
 
 DISTFILES += qml/harbour-animalApp.qml \
@@ -47,6 +51,9 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/harbour-animalApp-de.ts
 
 HEADERS += \
+    animal.h \
+    animallist.h \
+    animalmodel.h \
     animal.h \
     animallist.h \
     animalmodel.h

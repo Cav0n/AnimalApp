@@ -30,6 +30,19 @@ Page {
                 visible: ( animal.name.length > 32 ) ? true : false
             }
 
+            TextArea {
+                text: animal.description
+ //               textFormat: TextEdit.RichText
+                font.pixelSize: Theme.fontSizeSmall
+                readOnly: true
+                width: parent.width
+                wrapMode: TextEdit.Wrap
+
+                Component.onCompleted: {
+                                _editor.textFormat = TextEdit.RichText
+                }
+            }
+
             Button {
                 text: qsTr("See Online")
                 anchors.horizontalCenter: parent.horizontalCenter
