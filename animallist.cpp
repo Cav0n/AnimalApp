@@ -3,26 +3,7 @@
 
 AnimalList::AnimalList(QObject *parent) : QObject(parent)
 {
-    append(new Animal("Tigre","https://upload.wikimedia.org/wikipedia/commons/2/2e/Tigerramki.jpg","Un magnifique fauve qui peut attendre des vitesses de barges !"));
-    append(new Animal("Lion","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Lion_d%27Afrique.jpg/440px-Lion_d%27Afrique.jpg","C'est le roi de la savane mec."));
-    append(new Animal("Tigre","https://upload.wikimedia.org/wikipedia/commons/2/2e/Tigerramki.jpg","Un magnifique fauve qui peut attendre des vitesses de barges !"));
-    append(new Animal("Lion","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Lion_d%27Afrique.jpg/440px-Lion_d%27Afrique.jpg","C'est le roi de la savane mec."));
-    append(new Animal("Tigre","https://upload.wikimedia.org/wikipedia/commons/2/2e/Tigerramki.jpg","Un magnifique fauve qui peut attendre des vitesses de barges !"));
-    append(new Animal("Lion","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Lion_d%27Afrique.jpg/440px-Lion_d%27Afrique.jpg","C'est le roi de la savane mec."));
-    append(new Animal("Tigre","https://upload.wikimedia.org/wikipedia/commons/2/2e/Tigerramki.jpg","Un magnifique fauve qui peut attendre des vitesses de barges !"));
-    append(new Animal("Lion","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Lion_d%27Afrique.jpg/440px-Lion_d%27Afrique.jpg","C'est le roi de la savane mec."));
-    append(new Animal("Tigre","https://upload.wikimedia.org/wikipedia/commons/2/2e/Tigerramki.jpg","Un magnifique fauve qui peut attendre des vitesses de barges !"));
-    append(new Animal("Lion","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Lion_d%27Afrique.jpg/440px-Lion_d%27Afrique.jpg","C'est le roi de la savane mec."));
-    append(new Animal("Tigre","https://upload.wikimedia.org/wikipedia/commons/2/2e/Tigerramki.jpg","Un magnifique fauve qui peut attendre des vitesses de barges !"));
-    append(new Animal("Lion","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Lion_d%27Afrique.jpg/440px-Lion_d%27Afrique.jpg","C'est le roi de la savane mec."));
-    append(new Animal("Tigre","https://upload.wikimedia.org/wikipedia/commons/2/2e/Tigerramki.jpg","Un magnifique fauve qui peut attendre des vitesses de barges !"));
-    append(new Animal("Lion","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Lion_d%27Afrique.jpg/440px-Lion_d%27Afrique.jpg","C'est le roi de la savane mec."));
-    append(new Animal("Tigre","https://upload.wikimedia.org/wikipedia/commons/2/2e/Tigerramki.jpg","Un magnifique fauve qui peut attendre des vitesses de barges !"));
-    append(new Animal("Lion","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Lion_d%27Afrique.jpg/440px-Lion_d%27Afrique.jpg","C'est le roi de la savane mec."));
-    append(new Animal("Tigre","https://upload.wikimedia.org/wikipedia/commons/2/2e/Tigerramki.jpg","Un magnifique fauve qui peut attendre des vitesses de barges !"));
-    append(new Animal("Lion","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Lion_d%27Afrique.jpg/440px-Lion_d%27Afrique.jpg","C'est le roi de la savane mec."));
-    append(new Animal("Tigre","https://upload.wikimedia.org/wikipedia/commons/2/2e/Tigerramki.jpg","Un magnifique fauve qui peut attendre des vitesses de barges !"));
-    append(new Animal("Lion","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Lion_d%27Afrique.jpg/440px-Lion_d%27Afrique.jpg","C'est le roi de la savane mec."));
+
 }
 
 void AnimalList::append(Animal *animal)

@@ -18,6 +18,8 @@ SOURCES += src/harbour-animalApp.cpp \
     animal.cpp \
     animallist.cpp \
     animalmodel.cpp \
+    animalsfactory.cpp \
+    animalsfactory_wikipedia.cpp \
 
 DISTFILES += qml/harbour-animalApp.qml \
     qml/cover/CoverPage.qml \
@@ -32,7 +34,8 @@ DISTFILES += qml/harbour-animalApp.qml \
     qml/pages/AnimalListPage.qml \
     qml/pages/Animal.qml \
     qml/pages/FullAnimalDescription.qml \
-    qml/delegates/DelegateAnimal.qml
+    qml/delegates/DelegateAnimal.qml \
+    data/wikipedia/animals.json
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
@@ -50,4 +53,8 @@ HEADERS += \
     animal.h \
     animallist.h \
     animalmodel.h \
-    json.hpp
+    animalsfactory.h \
+    animalsfactory_wikipedia.h \
+
+RESOURCES += \
+    animals_resources.qrc
