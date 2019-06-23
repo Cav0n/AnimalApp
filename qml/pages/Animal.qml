@@ -24,9 +24,16 @@ Page {
                 title: animal.name
             }
 
+            Image {
+                width: parent.width
+                height: parent.width
+                fillMode: Image.PreserveAspectFit
+                source: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Tigerramki.jpg"
+            }
+
             DetailItem {
                 label: qsTr("Animal name")
-                value: name.name
+                value: animal.name
                 visible: ( animal.name.length > 32 ) ? true : false
             }
 

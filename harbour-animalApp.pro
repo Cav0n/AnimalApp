@@ -18,10 +18,6 @@ SOURCES += src/harbour-animalApp.cpp \
     animal.cpp \
     animallist.cpp \
     animalmodel.cpp \
-    src/harbour-animalApp.cpp \
-    animal.cpp \
-    animallist.cpp \
-    animalmodel.cpp
 
 DISTFILES += qml/harbour-animalApp.qml \
     qml/cover/CoverPage.qml \
@@ -54,6 +50,3 @@ HEADERS += \
     animal.h \
     animallist.h \
     animalmodel.h \
-    animal.h \
-    animallist.h \
-    animalmodel.h
