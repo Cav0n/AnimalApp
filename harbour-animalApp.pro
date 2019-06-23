@@ -50,3 +50,4 @@ HEADERS += \
     animal.h \
     animallist.h \
     animalmodel.h \
+    json.hpp

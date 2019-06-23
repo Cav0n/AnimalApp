@@ -50,9 +50,10 @@ void AnimalModel::setList(AnimalList *AnimalList)
 void AnimalModel::newElement()
 {
     QString nom(tr("Unknown"));
+    QString imageName(tr("Unknow"));
     QString description(tr("Unknow"));
 
-    m_AnimalList->createAnimal(nom, description);
+    m_AnimalList->createAnimal(nom, imageName, description);
 }
 
 void AnimalModel::removeRow(int index)

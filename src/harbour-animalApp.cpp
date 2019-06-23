@@ -1,5 +1,6 @@
 #ifdef QT_QML_DEBUG
 #include <QtQuick>
+
 #endif
 
 #include "animal.h"
@@ -28,7 +29,9 @@ int main(int argc, char *argv[])
 
     AnimalList animalList;
 
-    qInfo() << "Bonjour";
+    /* TEST DE REQUETE HTTP - JSON */
+
+    /* ---- */
 
     view->rootContext()->setContextProperty("animalList", &animalList);
     view->setSource(SailfishApp::pathToMainQml());

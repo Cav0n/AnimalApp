@@ -28,7 +28,7 @@ Page {
                 width: parent.width
                 height: parent.width
                 fillMode: Image.PreserveAspectFit
-                source: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Tigerramki.jpg"
+                source: animal.imageName
             }
 
             DetailItem {

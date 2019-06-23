@@ -17,7 +17,7 @@ public:
 
     Animal *at(int place) const;
     void append(Animal* animal);
-    void createAnimal(QString nom, QString description);
+    void createAnimal(QString nom,QString imageName, QString description);
     void removeAnimal(int position);
     int count() const;
 
