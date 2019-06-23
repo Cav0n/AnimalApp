@@ -27,9 +27,9 @@ Animal *AnimalList::at(int place) const
     return m_animals.at(place);
 }
 
-void AnimalList::createAnimal(QString nom, QString imageName, QString description)
+void AnimalList::createAnimal(QString id, QString nom, QString imageName, QString description)
 {
-    append(new Animal(nom, imageName, description));
+    append(new Animal(id, nom, imageName, description));
 }
 
 void AnimalList::removeAnimal(int position)

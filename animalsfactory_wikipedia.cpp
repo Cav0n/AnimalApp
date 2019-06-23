@@ -40,10 +40,12 @@ void AnimalsFactory_wikipedia::parseFile(QString filename)
 
 void AnimalsFactory_wikipedia::parseAnimal(const QJsonObject &animal)
 {
+    QString id = animal["pageid"].toString();
     QString name = animal["title"].toString();
     QString description = animal["snippet"].toString();
+    qInfo() << id;
 
-    (*m_animals).append(new Animal(name, "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Question_mark_grey.svg/439px-Question_mark_grey.svg.png", description));
+    (*m_animals).append(new Animal(id, name, "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Question_mark_grey.svg/439px-Question_mark_grey.svg.png", description));
 }
 
 #include "animalsfactory_wikipedia.h"

@@ -4,17 +4,17 @@ import Sailfish.Silica 1.0
 Page {
     property var animal
     Component.onCompleted: {
-        request('http://fr.wikipedia.org/w/api.php?action=query&format=json&uselang=fr&prop=info%7Cpageprops%7Cdescription&inprop=url&pageids=695884', function (o) {
+        request('http://fr.wikipedia.org/w/api.php?action=query&format=json&uselang=fr&prop=info%7Cpageprops%7Cdescription&inprop=url&pageids='+animal.id, function (o) {
                 // log the json response
-                var test = o.responseText.slice(47, -3);
-                console.log("Un petit test : " + test);
-                console.log(o.responseText);
+                var test = o.responseText.slice(41+animal.id.length, -3);
+                console.log(animal.id.lenght + " ---- " + test);
                 // translate response into object
                 var d = eval('new Object(' + test + ')');
 
                 // access elements inside json object with dot notation
                 //emailLabel.text = d.query.pages;
                 console.log("QUERY : " + d.pageid);
+                animalDescription.text = d.description;
             });
     }
 
@@ -53,6 +53,7 @@ Page {
             }
 
             TextArea {
+                id: animalDescription;
                 text: animal.description
  //               textFormat: TextEdit.RichText
                 font.pixelSize: Theme.fontSizeSmall
@@ -82,6 +83,7 @@ Page {
         }
     }
     function request(url, callback) {
+        console.log(url);
             var xhr = new XMLHttpRequest();
 
             xhr.onreadystatechange = (function(myxhr) {

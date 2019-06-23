@@ -1,12 +1,22 @@
 #include "animal.h"
 
-Animal::Animal(QString name,QString imageName,QString description)
+Animal::Animal(QString id, QString name,QString imageName,QString description)
     :
+    m_id(id),
     m_name(name),
     m_imageName(imageName),
     m_description(description)
 {
 
+}
+
+void Animal::setId(QString id)
+{
+    if(m_id == id)
+        return;
+
+    m_id = id;
+    emit idChanged(m_id);
 }
 
 void Animal::setName(QString name)
@@ -39,6 +49,11 @@ void Animal::setDescription(QString description)
     emit descriptionChanged(m_description);
 }
 
+QString Animal::id() const
+{
+    return m_id;
+}
+
 QString Animal::name() const
 {
     return m_name;
@@ -53,4 +68,3 @@ QString Animal::description() const
 {
     return m_description;
 }
-

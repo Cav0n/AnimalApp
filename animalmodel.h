@@ -41,6 +41,7 @@ public:
 
     virtual QHash<int, QByteArray> roleNames() const override;
     enum {
+        Id,
         Name,
         Description,
         Animal
