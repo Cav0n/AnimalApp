@@ -49,6 +49,15 @@ void Animal::setDescription(QString description)
     emit descriptionChanged(m_description);
 }
 
+void Animal::setUrl(QString url)
+{
+    if (m_url == url)
+        return;
+
+    m_url = url;
+    emit urlChanged(m_url);
+}
+
 QString Animal::id() const
 {
     return m_id;
@@ -67,4 +76,9 @@ QString Animal::imageName() const
 QString Animal::description() const
 {
     return m_description;
+}
+
+QString Animal::url() const
+{
+    return m_url;
 }

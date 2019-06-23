@@ -11,6 +11,7 @@ Page {
             console.log("IMAGE : " + jsonConverted.query.pages[animal.id].pageprops.page_image_free);
 
             var description = jsonConverted.query.pages[animal.id].description;
+            animal.url = jsonConverted.query.pages[animal.id].fullurl;
             var imageName = jsonConverted.query.pages[animal.id].pageprops.page_image_free;
 
             animalDescription.text = description;
@@ -78,11 +79,12 @@ Page {
             }
 
             Button {
-                text: qsTr("See Online")
+                id: webPageButton;
+                text: qsTr("Voir la page Wikipedia")
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
-                    console.log(("https://www.google.fr"))
-                    pageStack.push(webview, { url: "https://www.google.fr"} )
+                    console.log((animal.url))
+                    pageStack.push(webview, { url: animal.url} )
                 }
                 //visible: animal.url.toString() !== ""
 

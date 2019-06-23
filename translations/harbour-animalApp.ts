@@ -12,11 +12,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>See Online</source>
+        <source>Animal name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Animal name</source>
+        <source>Voir la page Wikipedia</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
