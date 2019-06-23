@@ -4,18 +4,29 @@ import Sailfish.Silica 1.0
 Page {
     property var animal
     Component.onCompleted: {
-        request('http://fr.wikipedia.org/w/api.php?action=query&format=json&uselang=fr&prop=info%7Cpageprops%7Cdescription&inprop=url&pageids='+animal.id, function (o) {
-                // log the json response
-                var test = o.responseText.slice(41+animal.id.length, -3);
-                console.log(animal.id.lenght + " ---- " + test);
-                // translate response into object
-                var d = eval('new Object(' + test + ')');
+        request('http://fr.wikipedia.org/w/api.php?action=query&format=json&uselang=fr&prop=info%7Cpageprops%7Cdescription&inprop=url&pageids='+animal.id, function (o){
+            var response = o.responseText;
+            var jsonConverted = eval('new Object(' + response + ')');
+            console.log("DESCRIPTION : " + jsonConverted.query.pages[animal.id].description);
+            console.log("IMAGE : " + jsonConverted.query.pages[animal.id].pageprops.page_image_free);
 
-                // access elements inside json object with dot notation
-                //emailLabel.text = d.query.pages;
-                console.log("QUERY : " + d.pageid);
-                animalDescription.text = d.description;
+            var description = jsonConverted.query.pages[animal.id].description;
+            var imageName = jsonConverted.query.pages[animal.id].pageprops.page_image_free;
+
+            animalDescription.text = description;
+
+            request('http://fr.wikipedia.org/w/api.php?action=query&format=json&uselang=fr&prop=imageinfo&titles=Fichier:' + imageName + '&iiprop=user%7Curl', function(p) {
+                var response = p.responseText;
+                response = response.replace('[', '');
+                response = response.replace(']', '');
+                console.log("LE JSON : " + response.replace('[', '').replace(']', ''));
+                var jsonConverted = eval('new Object(' + response.replace('[', '').replace(']', '') + ')');
+                console.log("VERITABLE IMAGE : " + jsonConverted.query.pages["-1"].imageinfo);
+
+                var imageURL = jsonConverted.query.pages["-1"].imageinfo.url;
+                animalImage.source = imageURL;
             });
+        });
     }
 
     SilicaFlickable {
