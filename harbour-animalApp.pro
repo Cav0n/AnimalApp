@@ -23,8 +23,6 @@ SOURCES += src/harbour-animalApp.cpp \
 
 DISTFILES += qml/harbour-animalApp.qml \
     qml/cover/CoverPage.qml \
-    qml/pages/FirstPage.qml \
-    qml/pages/SecondPage.qml \
     rpm/harbour-animalApp.changes.in \
     rpm/harbour-animalApp.changes.run.in \
     rpm/harbour-animalApp.spec \
