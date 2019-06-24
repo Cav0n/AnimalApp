@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import AnimalModel 1.0
 import '../delegates'
+import '../pages'
 
 Page {
     id: page
@@ -21,5 +22,16 @@ Page {
         }
 
         delegate: DelegateAnimal { }
+    }
+
+    PullDownMenu{
+        MenuItem {
+            text: "favouritesMenu"
+            onClicked: pageStack.push( favouritePage, {favourites: favourites})
+            Component{
+                id: favouritePage
+                Animal {}
+            }
+        }
     }
 }
