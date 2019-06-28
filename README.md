@@ -24,9 +24,17 @@ Un PullDownMenu est présent dans chaque page de détail d'un animal, il permet 
 
 Un clic sur un mammifère ouvre la page de détail.
 
+### SilicaListView
+
+La liste sur laquelle démarre l'app est une silicalistview qui fonctionne avec l'animalmodel.
+
 ### SilicaWebView
 
 Un clic sur le bouton "Voir la page Wikipedia" dans le detail permet d'afficher la page Wikipedia dans une SilicaWebView.
+
+### Suppression
+
+Pas de remorse bar... néanmois il y a possibilité de supprimer un animal de la liste.
 
 ### QObject avec QProperties
 
@@ -38,3 +46,4 @@ Chaque animal possède de multiples QPROPERTY permettant de décrire un animal e
 - Comme Wikipedia est extremement complexe et complet, parfois en plus d'animaux il y aussi des ordres, 
  des sous-classes ou autres...
 - Page favoris pas encore mis en place.
+- Quelques fois l'image et la description dans le detail ne se mettent pas a jour...
